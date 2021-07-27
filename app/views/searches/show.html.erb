@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<h1>Search result</h1>
 
-<p>
-  <strong>From:</strong>
-  <%= @search.from %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>To:</strong>
-  <%= @search.to %>
-</p>
+  <tbody>
+    <% @flights.each do |flight| %>
+      <tr>
+        <td><%= flight.from_airport %></td>
+        <td><%= flight.to_airport %></td>
+        <td><%= flight.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Date:</strong>
-  <%= @search.date %>
-</p>
-
-<%= link_to 'Edit', edit_search_path(@search) %> |
-<%= link_to 'Back', searches_path %>
+<%=link_to "Another search", new_search_path%>

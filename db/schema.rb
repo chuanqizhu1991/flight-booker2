@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_081354) do
+ActiveRecord::Schema.define(version: 2021_07_27_091701) do
 
   create_table "airports", force: :cascade do |t|
     t.string "name"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_07_27_081354) do
   end
 
   create_table "flights", force: :cascade do |t|
-    t.integer "from_airport"
-    t.integer "to_airport"
+    t.string "from_airport"
+    t.string "to_airport"
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_07_27_081354) do
   create_table "searches", force: :cascade do |t|
     t.string "from"
     t.string "to"
-    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
