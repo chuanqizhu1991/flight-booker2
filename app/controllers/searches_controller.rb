@@ -8,11 +8,15 @@ class SearchesController < ApplicationController
 
   # GET /searches/1 or /searches/1.json
   def show
+    from = Search.last.from
+    to = Search.last.to
+    @flights = Flight.where({from_airport:from, to_airport:to})
   end
 
   # GET /searches/new
   def new
     @search = Search.new
+    @location_options = Airport.all.map{|airport| airport.name}
   end
 
   # GET /searches/1/edit
