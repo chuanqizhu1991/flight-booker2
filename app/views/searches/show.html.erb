@@ -16,6 +16,7 @@
         <td><%= flight.from_airport %></td>
         <td><%= flight.to_airport %></td>
         <td><%= flight.date %></td>
+        <td><%=link_to "Book this flight", new_booking_path %></td>
       </tr>
     <% end %>
   </tbody>
